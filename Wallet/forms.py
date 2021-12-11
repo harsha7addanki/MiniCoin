@@ -17,8 +17,7 @@ class TransferForm(forms.Form):
         data = self.cleaned_data['amount']
         if data <= 0:
             raise ValidationError(_('Invalid amount - must be greater than 0'))
-        else: 
-            return data
+        return data
 
     def clean_to(self):
         data = self.cleaned_data['to']
