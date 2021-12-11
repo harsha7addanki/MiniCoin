@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}Your Wallet{% endblock title %}
 {% block navbar %}
-<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item active" aria-current="page" href="{% url 'transfer' %}">Transfer</a>
-    </div>
+  <div class="navbar-nav">
+    <a class="nav-link active" aria-current="page" href="{% url 'transfer' %}">Transfer</a>
   </div>
   <a href="/logout" class="btn btn-outline-danger">Logout</a>
 {% endblock navbar %}
