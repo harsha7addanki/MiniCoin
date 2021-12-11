@@ -22,4 +22,4 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractUser):
-    coins = models.BigIntegerField()
+    coins = models.BigIntegerField(default=100)
