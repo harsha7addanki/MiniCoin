@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 def viewWallet(request):
     if not request.user.is_authenticated:
-        return render(request, 'welcome.html')
+        return render(request, 'Welcome.html')
     
 
 def signup(request):
