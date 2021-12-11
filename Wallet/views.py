@@ -37,8 +37,8 @@ def transfer(request):
             if fromuser.coins < int(ammount):
                 return redirect('home')
             touser = User.objects.get(username=to)
-            fromuser.update(coins=fromuser.coins-ammount)
-            touser.update(coins=touser.coins+ammount)
+            fromuser.coins -= ammount
+            touser.coins += ammount
             return redirect('home')
     else:
         form = TransferForm()
