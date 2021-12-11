@@ -32,6 +32,7 @@ def transfer(request):
         if form.is_valid():
             to = form.cleaned_data.get('to')
             ammount = form.cleaned_data.get('ammount')
+            print(ammount)
             fromuser = request.user
             if fromuser.coins < ammount:
                 return redirect('home')
