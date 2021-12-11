@@ -24,5 +24,5 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractUser):
-    email = models.Email(primary_key = True)
+    email = models.EmailField(primary_key = True)
     coins = models.BigIntegerField(default=100)
