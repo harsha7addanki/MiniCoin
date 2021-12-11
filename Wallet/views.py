@@ -31,7 +31,7 @@ def transfer(request):
         form = TransferForm(request.POST)
         if form.is_valid():
             to = form.cleaned_data.get('to')
-            ammount = form.cleaned_data.get('ammount')
+            ammount = form.cleaned_data.get('amount')
             print(ammount)
             fromuser = request.user
             if fromuser.coins < int(ammount):
