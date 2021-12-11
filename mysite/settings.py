@@ -121,3 +121,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
+
+AUTH_USER_MODEL = 'myapp.Person'
