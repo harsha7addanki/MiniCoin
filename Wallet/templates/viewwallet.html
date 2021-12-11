@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Your Wallet{% endblock title %}
-{% block navbar %}{% endblock navbar %}
+{% block navbar %}
+<li class="nav-item">
+    <a class="nav-link" href="#">Transfer</a>
+</li>
+{% endblock navbar %}
 {% block content %}
-    <h1>Your Wallet:</h1>
-    <h1>{{ user.coins }}</h1>
+    <h1 class="text-center">Your Wallet:</h1>
+    <h1 class="text-center">{{ user.coins }}</h1>
 {% endblock content %}
