@@ -30,7 +30,6 @@ def transfer(request):
     if request.method == 'POST':
         form = TransferForm(request.POST)
         if form.is_valid():
-            form.save()
             to = form.cleaned_data.get('to')
             ammount = form.cleaned_data.get('ammount')
             fromuser = request.user
