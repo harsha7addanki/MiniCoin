@@ -23,7 +23,7 @@ class TransferForm(forms.Form):
     def clean_to(self):
         data = self.cleaned_data['to']
         try:
-            user = User.objects.exclude(pk=self.instance.pk).get(username=data)
+            user = User.objects.get(username=data)
         except User.DoesNotExist:
             raise ValidationError(u'Username "%s" is already in use.' % data)    
         return data
