@@ -6,6 +6,8 @@ from django.shortcuts import render, redirect
 def viewWallet(request):
     if not request.user.is_authenticated:
         return render(request, 'Welcome.html')
+    else:
+        return render(request, 'viewwallet.html',{"user":request.user})
     
 
 def signup(request):

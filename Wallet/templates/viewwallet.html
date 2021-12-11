@@ -1,3 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Your Wallet{% endblock title %}
 {% block navbar %}{% endblock navbar %}
+{% block content %}
+    <h1>Your Wallet:</h1>
+    <h1>{{ user.coins }}</h1>
+{% endblock content %}
