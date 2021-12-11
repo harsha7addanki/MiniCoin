@@ -6,7 +6,7 @@
     <form method="POST" class="text-center">
         {% csrf_token %}
         {% for field in form %}
-            <div class="mb-3">
+            <div class="mb-3 input-group">
                 <span class="input-group-text" id="basic-addon1">{{ field.label_tag }}</span>
                 {{ field|addclass:'form-control'}}
                 {% for error in field.errors %}
