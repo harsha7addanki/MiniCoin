@@ -3,8 +3,10 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 
 # Create your models here.
 class UserManager(BaseUserManager):
-    def create_user(self, password=None):
-        user = self.model()
+    def create_user(self, email, password=None):
+        user = self.model(
+            email=email,
+        )
 
         user.set_password(password)
         user.set_coins(50)
@@ -22,4 +24,5 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractUser):
+    email = models.Email(primary_key = True)
     coins = models.BigIntegerField(default=100)
