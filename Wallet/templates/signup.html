@@ -9,7 +9,6 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">{{ field.label_tag }}</label>
                 {{ field|addclass:'form-control' }}
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 {% for error in field.errors %}
                     <div class="alert alert-danger" role="alert">
                         {{ error }}
