@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}Login{% endblock title %}
 {% block content %}
-    <form method="POST">
+    <form method="POST" class="text-center">
         {% csrf_token %}
         {% for field in form %}
-            <p>
-                {{ field.label_tag }}<br>
-                {{ field }}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">{{ field.label_tag }}</label>
+                <span class="form-control">{{ field }}</span>
                 {% for error in field.errors %}
                     <div class="alert alert-danger" role="alert">
                         {{ error }}
                     </div>
                 {% endfor %}
-            </p>
+            </div>
         {% endfor %}
         <input class="btn btn-primary" type="submit" value="Sign Up">
     </form>
