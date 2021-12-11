@@ -1,9 +1,22 @@
 {% extends '../base.html' %}
 {% block title %}Login{% endblock title %}
 {% block content %}
-    <form method="POST">
+    {% load myfilters %}
+    <h1>Login</h1>
+    <form method="POST" class="text-center">
         {% csrf_token %}
-        {{ form }}
+        {% for field in form %}
+            <div class="mb-3 input-group">
+                <span class="input-group-text" id="basic-addon1">{{ field.label_tag }}</span>
+                {{ field|addclass:'form-control'}}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
         <input class="btn btn-primary" type="submit" value="Login">
     </form>
+    <small>Don't Have An account yet? Sign Up <a href="{% url 'signup' %}"></a></small>
 {% endblock content %}
