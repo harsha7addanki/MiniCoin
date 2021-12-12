@@ -45,3 +45,6 @@ def transfer(request):
     else:
         form = TransferForm()
     return render(request, 'transfer.html', {'form': form})
+
+def userpage(request):
+    ...
