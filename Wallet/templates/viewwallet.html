@@ -7,9 +7,10 @@
   <a href="/logout" class="btn btn-outline-danger">Logout</a>
 {% endblock navbar %}
 {% block content %}
-    <br/><br/>
-    <br/><br/>
-    <br/><br/>
-    <h1 class="text-center">Your Wallet:</h1>
-    <h1 class="text-center">{{ user.coins }}</h1>
+  {% load humanize %}
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+  <h1 class="text-center">Your Wallet:</h1>
+  <h1 class="text-center">{{ user.coins|intcomma }}</h1>
 {% endblock content %}
