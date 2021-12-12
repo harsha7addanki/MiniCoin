@@ -24,4 +24,4 @@ class UserManager(BaseUserManager):
 
 class User(AbstractUser):
     coins = models.BigIntegerField(default=100)
-    following = models.ManyToManyField("self")
+    following = models.ManyToManyField("self", blank=True)
