@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import signup,viewWallet,transfer
+from .views import signup,viewWallet,transfer,userpage
 
 urlpatterns = [
     path("signup/",signup,name="signup"),
     path("",viewWallet,name="home"),
     path("transfer/",transfer,name="transfer"),
-    path("account/<str:username>/",)
+    path("account/<str:username>/",userpage)
 ]
