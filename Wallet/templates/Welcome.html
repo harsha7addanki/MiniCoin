@@ -30,13 +30,17 @@
         <br/><br/>
         <br/><br/>
         <br/><br/>
-        <h1 class="text-center">Welcome to MiniCoin</h1>
-        <h6 class="text-center">The Quick, Fast And Enviorment Friendly Currency</h6>
-        <div class="text-center">
-            <a class="btn btn-primary" href="{% url 'signup' %}" role="button">Sign Up!</a>
-            or
-            <a class="btn btn-primary" href="/login" role="button">Log In!</a>
-        </div>
+        <div class="px-4 py-5 my-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            <h1 class="display-5 fw-bold">Welcome to MiniCoin</h1>
+            <div class="col-lg-6 mx-auto">
+              <h6 class="lead mb-4">The Quick, Fast And Enviorment Friendly Currency</h6>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a class="btn btn-primary" href="{% url 'signup' %}" role="button">Sign Up!</a>
+                <a class="btn btn-secondary-outline" href="/login" role="button">Log In!</a>
+              </div>
+            </div>
+          </div>
         <div class="b-example-divider"></div>
         <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
