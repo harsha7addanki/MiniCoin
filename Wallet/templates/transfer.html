@@ -17,7 +17,7 @@
         <div class="mb-3 input-group">
             <button class="btn btn-outline-secondary" type="button" id="button-addon1" onclick="document.getElementById('yes').value -= -1">+</button>
             {{ form.to|addclassi:'form-control'}}
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="document.getElementById('yes').value -= 1">-</button> Coins
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="document.getElementById('yes').value -= 1">-</button>
             {% for error in form.to.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
