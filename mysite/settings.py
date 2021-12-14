@@ -123,6 +123,13 @@ STATIC_URL = '/static/'
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
 
+
+# Celery Settings
+CELERY_TIMEZONE = "US/Eastern"
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+
+# Costom Settings
 AUTH_USER_MODEL = 'Wallet.User'
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
