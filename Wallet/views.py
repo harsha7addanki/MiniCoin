@@ -27,24 +27,27 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 def transfer(request):
-    if request.method == 'POST':
-        form = TransferForm(request.POST)
-        if form.is_valid():
-            to = form.cleaned_data.get('to')
-            ammount = form.cleaned_data.get('amount')
-            print(ammount)
-            fromuser = request.user
-            if fromuser.coins < int(ammount):
-                return redirect('home')
-            touser = User.objects.get(username=to)
-            fromuser.coins -= ammount
-            touser.coins += ammount
-            fromuser.save()
-            touser.save()
-            return redirect('home')
+    if not request.user.is_authenticated:
+        return render(request, 'Welcome.html')
     else:
-        form = TransferForm()
-    return render(request, 'transfer.html', {'form': form})
+        if request.method == 'POST':
+            form = TransferForm(request.POST)
+            if form.is_valid():
+                to = form.cleaned_data.get('to')
+                ammount = form.cleaned_data.get('amount')
+                print(ammount)
+                fromuser = request.user
+                if fromuser.coins < int(ammount):
+                    return redirect('home')
+                touser = User.objects.get(username=to)
+                fromuser.coins -= ammount
+                touser.coins += ammount
+                fromuser.save()
+                touser.save()
+                return redirect('home')
+        else:
+            form = TransferForm()
+        return render(request, 'transfer.html', {'form': form})
 
 def userpage(request):
     ...
