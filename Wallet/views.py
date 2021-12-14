@@ -28,7 +28,7 @@ def signup(request):
 
 def transfer(request):
     if not request.user.is_authenticated:
-        return render(request, 'Welcome.html')
+        return redirect('home')
     else:
         if request.method == 'POST':
             form = TransferForm(request.POST)
