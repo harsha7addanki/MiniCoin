@@ -15,7 +15,7 @@
   <h1 class="text-center">{{ user.coins|intcomma }}</h1>
   
   <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    {% for gift in user.gifts %}
+    {% for gift in user.gifts.all %}
       <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
           <img src="..." class="rounded me-2" alt="...">
