@@ -82,6 +82,7 @@ DATABASES = {
         'USER': 'sreeharsha',
         'PASSWORD': '@YWagdFKYE$ns&pD',
         'HOST': 'mysql.fztl.com',
+        'PORT': '3306',
     }
 }
 
