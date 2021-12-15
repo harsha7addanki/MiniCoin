@@ -78,9 +78,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': './base.cnf',
-        },
+        'NAME': 'minicoin',
+        'USER': 'sreeharsha',
+        'PASSWORD': '@YWagdFKYE$ns&pD',
+        'HOST': 'mysql.fztl.com',
     }
 }
 

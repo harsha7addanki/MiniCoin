@@ -1,6 +1,0 @@
-[client]
-host = mysql.fztl.com
-database = minicoin
-user = sreeharsha
-password = @YWagdFKYE$ns&pD
-default-character-set = utf8
