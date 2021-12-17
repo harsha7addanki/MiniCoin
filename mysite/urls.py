@@ -17,11 +17,9 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 from . import settings
-from Wallet.views import collectgift
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("Wallet.urls")),
-    path("collectgift/<int:id>/",collectgift,name="colgift"),
     path('',include("django.contrib.auth.urls"))
 ] + static(settings.STATIC_URL, document_root='/home/dh_hemuuv/minicoin.fztl.com/static')
