@@ -14,4 +14,4 @@ class GiftAdmin(admin.ModelAdmin):
 
 admin.site.register(Gift, GiftAdmin)
 admin.site.site_header = 'Developer Interface'
-admin.site.index_title= 'Developer Interface'
+admin.site.index_title= 'Developer Interface' 
