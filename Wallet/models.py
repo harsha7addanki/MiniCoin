@@ -28,7 +28,7 @@ class UserManager(BaseUserManager):
 class User(AbstractUser):
     coins = models.BigIntegerField(default=100)
     following = models.ManyToManyField("self", blank=True)
-    gifts = models.ManyToManyField('Gift')
+    gifts = models.ManyToManyField('Gift', blank=True)
 
 class Gift(models.Model):
     from_usr = models.ForeignKey(User, models.CASCADE)
