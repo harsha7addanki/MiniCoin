@@ -6,5 +6,4 @@ urlpatterns = [
     path("",viewWallet,name="home"),
     path("transfer/",transfer,name="transfer"),
     path("account/<str:username>/",userpage),
-    path("collectgift/<int:id>/",collectgift,name="colgift"),
 ]
