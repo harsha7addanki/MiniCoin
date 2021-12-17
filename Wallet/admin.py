@@ -1,14 +1,7 @@
 from django.contrib import admin
-from .models import User,Gift
+from django.apps import apps
 
-# Register your models here.
+models = apps.get_models()
 
-
-class UserAdmin(admin.ModelAdmin):
-    pass
-
-admin.site.register(User, UserAdmin)
-admin.site.register(Gift)
-
-admin.site.site_header = 'Developer Interface'
-admin.site.index_title= 'Developer Interface' 
+for model in models:
+    admin.site.register(model)
