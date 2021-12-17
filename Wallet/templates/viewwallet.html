@@ -23,13 +23,13 @@
         </div>
         <div class="toast-body">
           {{ gift.from_usr.username }} Gave You a Gift! Open?<br/>
-          <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#{{gift.id}}">
+          <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#m{{gift.id}}">
             Open Gift!
           </button>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="{{gift.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="m{{gift.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
