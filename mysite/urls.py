@@ -19,7 +19,6 @@ from django.conf.urls.static import static
 from . import settings
 
 urlpatterns = [
-    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('',include("Wallet.urls")),
     path('',include("django.contrib.auth.urls"))
