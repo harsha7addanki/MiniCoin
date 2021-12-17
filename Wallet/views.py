@@ -1,5 +1,5 @@
 from django.contrib.auth import login, authenticate
-from .models import User
+from .models import User,Gift
 from Wallet.forms import TransferForm
 from .forms import SignUpForm
 from django.shortcuts import render, redirect
@@ -51,3 +51,17 @@ def transfer(request):
 
 def userpage(request):
     ...
+
+def collectgift(request, id):
+    if not request.user.is_authenticated:
+        return redirect('home')
+    else:
+        gift = Gift.objects.get(pk=id)
+        fromusr = gift.from_usr
+        fromusr.coins -= gift.ammount
+        request.user.coins += gift.ammount
+        request.user.gifts.remove(gift)
+        fromusr.save()
+        request.user.save()
+        gift.delete()
+        return redirect('home')
