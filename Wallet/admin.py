@@ -8,11 +8,7 @@ class UserAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(User, UserAdmin)
-
-class GiftAdmin(admin.ModelAdmin):
-    pass
-
-admin.site.register(Gift, GiftAdmin)
+admin.site.register(Gift)
 
 admin.site.site_header = 'Developer Interface'
 admin.site.index_title= 'Developer Interface' 
