@@ -36,7 +36,7 @@ class TestModel(models.Model):
 class User(AbstractUser):
     coins = models.BigIntegerField(default=100)
     following = models.ManyToManyField("self", blank=True)
-    gifts = models.ManyToManyField('Gift', blank=True)
+    #gifts = models.ManyToManyField('Gift', blank=True)
 
 
 
