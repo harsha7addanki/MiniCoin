@@ -25,14 +25,14 @@ class UserManager(BaseUserManager):
         return user
 
 class Gift(models.Model):
-    from_usr = models.ForeignKey(User, models.CASCADE)
+    from_usr = models.ForeignKey("User", models.CASCADE)
     amount = models.BigIntegerField(default=10)
     message = models.TextField()
 
 class TestModel(models.Model):
     name = models.TextField()
     msg = models.TextField()
-    
+
 class User(AbstractUser):
     coins = models.BigIntegerField(default=100)
     following = models.ManyToManyField("self", blank=True)
