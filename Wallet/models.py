@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 
 # Create your models here.
 
-
 # User
 class UserManager(BaseUserManager):
     def create_user(self, password=None):
@@ -34,3 +33,8 @@ class Gift(models.Model):
     from_usr = models.ForeignKey(User, models.CASCADE)
     amount = models.BigIntegerField(default=10)
     message = models.TextField()
+
+class TestModel(models.Model):
+    name = models.TextField()
+    msg = models.TextField()
+
