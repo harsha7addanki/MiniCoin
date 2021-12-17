@@ -23,4 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("Wallet.urls")),
     path('',include("django.contrib.auth.urls"))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root='/home/dh_hemuuv/minicoin.fztl.com/static')
