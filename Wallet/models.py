@@ -26,7 +26,7 @@ class UserManager(BaseUserManager):
 
 class Gift(models.Model):
     from_usr = models.ForeignKey("User", models.CASCADE)
-    amount = models.BigIntegerField(default=10)
+    ammount = models.BigIntegerField(default=10)
     message = models.TextField()
 
 class TestModel(models.Model):
