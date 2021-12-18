@@ -58,8 +58,8 @@ def collectgift(request, id):
     else:
         gift = Gift.objects.get(pk=id)
         fromusr = gift.from_usr
-        fromusr.coins -= gift.ammount
-        request.user.coins += gift.ammount
+        fromusr.coins -= gift.amount
+        request.user.coins += gift.amount
         request.user.gifts.remove(gift)
         fromusr.save()
         request.user.save()
