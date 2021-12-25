@@ -5,6 +5,14 @@
     <a class="nav-link active" aria-current="page" href="/transfer">Transfer</a>
   </div>
   <a href="/logout" class="btn btn-outline-danger">Logout</a>
+  {% block css %}
+  .centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+  {% endblock css %}
 {% endblock navbar %}
 {% block content %}
   {% load humanize %}
