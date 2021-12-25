@@ -1,7 +1,7 @@
 from django.contrib.auth import login, authenticate
 from .models import User,Gift
 from Wallet.forms import TransferForm
-from .forms import SignUpForm
+from .forms import SignUpForm,GiftForm
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -65,3 +65,21 @@ def collectgift(request, id):
         return redirect('home')
     else:
         return render(request, 'Welcome.html')
+
+def givegift(request):
+    if request.method == 'POST':
+        form = GiftForm(request.POST)
+        if form.is_valid():
+            form.save()
+            to = form.cleaned_data.get('to')
+            amount = form.cleaned_data.get('amount')
+            message = form.cleaned_data.get('message')
+            gift = Gift(from_usr=request.user, amount=amount, message=message)
+            gift.save()
+            touser = User.objects.get(username=to)
+            touser.gifts.add(gift)
+            touser.save()
+            return redirect('home')
+    else:
+        form = GiftForm()
+    return render(request, 'gift.html', {'form': form})
