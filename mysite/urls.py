@@ -19,7 +19,6 @@ from django.conf.urls.static import static
 from . import settings
 
 urlpatterns = [
-    path('admin/',include("admin.site.urls")),
-    # path('',include(("Wallet.urls", 'Wallet'), namespace='Wallet')),
-    path('',include("django.contrib.auth.urls"))
+    path('admin/',admin.site.urls),
+    path('',include("Wallet.urls")),
 ] + static(settings.STATIC_URL, document_root='/home/dh_hemuuv/minicoin.fztl.com/static')
