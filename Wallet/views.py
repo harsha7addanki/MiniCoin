@@ -54,8 +54,6 @@ def userpage(request):
 
 def collectgift(request, id):
     if not request.user.is_authenticated:
-        return redirect('home')
-    else:
         gift = Gift.objects.get(pk=id)
         fromusr = gift.from_usr
         fromusr.coins -= gift.ammount
@@ -65,3 +63,5 @@ def collectgift(request, id):
         request.user.save()
         gift.delete()
         return redirect('home')
+    else:
+        return render(request, 'Welcome.html')
