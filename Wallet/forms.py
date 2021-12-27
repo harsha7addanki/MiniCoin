@@ -30,7 +30,7 @@ class TransferForm(forms.Form):
 class GiftForm(forms.Form):
     to = forms.CharField(required=True)
     amount = forms.IntegerField(required=True)
-    message = forms.Textarea(required=True)
+    message = forms.CharField(widget=forms.Textarea)
 
     def clean_amount(self):
         data = self.cleaned_data['amount']
