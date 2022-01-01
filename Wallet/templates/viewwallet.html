@@ -1,11 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Your Wallet{% endblock title %}
-{% block navbar %}
-  <div class="navbar-nav">
-    <a class="nav-link active" aria-current="page" href="/transfer">Transfer</a>
-  </div>
-  <a href="/logout" class="btn btn-outline-danger">Logout</a>
-  {% block css %}
+{% block css %}
     <style>
       .centered {
         position: fixed;
@@ -14,7 +9,12 @@
         transform: translate(-50%, -50%);
         }
     </style>
-  {% endblock css %}
+{% endblock css %}
+{% block navbar %}
+  <div class="navbar-nav">
+    <a class="nav-link active" aria-current="page" href="/transfer">Transfer</a>
+  </div>
+  <a href="/logout" class="btn btn-outline-danger">Logout</a>
 {% endblock navbar %}
 {% block content %}
   {% load humanize %}
