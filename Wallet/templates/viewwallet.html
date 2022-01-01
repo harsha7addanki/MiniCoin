@@ -6,21 +6,21 @@
   </div>
   <a href="/logout" class="btn btn-outline-danger">Logout</a>
   {% block css %}
-  .centered {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    }
+    <style>
+      .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+    </style>
   {% endblock css %}
 {% endblock navbar %}
 {% block content %}
   {% load humanize %}
-  <div class="centered">
-    <h1>Your Wallet:</h1>
-    <h1>{{ user.coins|intcomma }}</h1>
-    <a type="button" class="btn btn-primary" href="{% url 'givegift' %}">Give A Gift!</a>
-  </div>
+  <h1 class="centered">Your Wallet:</h1>
+  <h1 class="centered">{{ user.coins|intcomma }}</h1>
+  <a class="centered" type="button" class="btn btn-primary" href="{% url 'givegift' %}">Give A Gift!</a>
   
   <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
     {% for gift in user.gifts.all %}
