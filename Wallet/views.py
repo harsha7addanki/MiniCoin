@@ -73,7 +73,7 @@ def givegift(request):
             to = form.cleaned_data.get('to')
             amount = form.cleaned_data.get('amount')
             message = form.cleaned_data.get('message')
-            gift = Gift(from_usr=request.user, amount=amount, message=message)
+            gift = Gift(from_usr=request.user, ammount=amount, message=message)
             gift.save()
             touser = User.objects.get(username=to)
             touser.gifts.add(gift)
