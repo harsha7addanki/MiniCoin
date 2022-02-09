@@ -70,7 +70,6 @@ def givegift(request):
     if request.method == 'POST':
         form = GiftForm(request.POST)
         if form.is_valid():
-            form.save()
             to = form.cleaned_data.get('to')
             amount = form.cleaned_data.get('amount')
             message = form.cleaned_data.get('message')
