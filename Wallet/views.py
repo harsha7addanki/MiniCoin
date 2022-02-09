@@ -53,7 +53,7 @@ def userpage(request):
     ...
 
 def collectgift(request, id):
-    if not request.user.is_authenticated:
+    if request.user.is_authenticated:
         gift = Gift.objects.get(pk=id)
         fromusr = gift.from_usr
         fromusr.coins -= gift.ammount
