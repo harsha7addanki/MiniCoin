@@ -19,14 +19,6 @@ class TransferForm(forms.Form):
             raise ValidationError(_('Invalid amount - must be greater than 0'))
         return data
 
-    def clean_to(self):
-        data = self.cleaned_data['to']
-        try:
-            user = User.objects.get(username=data)
-        except User.DoesNotExist:
-            raise ValidationError(u'Username "%s" Does Not Exist.' % data)    
-        return data
-
 class GiftForm(forms.Form):
     to = forms.CharField(required=True)
     amount = forms.IntegerField(required=True)

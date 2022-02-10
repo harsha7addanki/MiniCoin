@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Oh No!{% endblock title %}
+{% block css %}
+    <style>
+      .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+    </style>
+{% endblock css %}
+{% block content %}
+    <div>
+        <h1>Oh No!</h1>
+        <a href="mailto:minicoincontact@gmail.com?subject={{err}}">Send Us An email</a>
+    </div>
+{% endblock content %}

@@ -36,7 +36,10 @@ def transfer(request):
                 to = form.cleaned_data.get('to')
                 ammount = form.cleaned_data.get('amount')
                 print(ammount)
-                fromuser = request.user
+                try:
+                    fromuser = request.user
+                except Exception as error:
+                    return render(request,'UNERROR.html',{"err": repr(error)})
                 if fromuser.coins < int(ammount):
                     return redirect('home')
                 touser = User.objects.get(username=to)
