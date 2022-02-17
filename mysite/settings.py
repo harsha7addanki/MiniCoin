@@ -123,8 +123,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = '/home/dh_hemuuv/minicoin.fztl.com/static'
+STATIC_URL = '/public/'
+STATIC_ROOT = '/home/dh_hemuuv/public'
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
 

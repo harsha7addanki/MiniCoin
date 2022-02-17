@@ -23,9 +23,28 @@
     <h1>{{ user.coins|intcomma }}</h1>
     <a type="button" class="btn btn-primary" href="{% url 'givegift' %}">Give A Gift!</a>
   </div>
-  
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    {% for gift in user.gifts.all %}
+  <div aria-live="polite" aria-atomic="true" class="position-relative">
+  {% for notification in user.notifications %}
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+          {% if notification.severity == "INF" %}
+            <img src="https://image.pngaaa.com/369/4877369-middle.png" class="rounded me-2" alt="...">
+          {% elif notification.severity == "WRN" %}
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Antu_dialog-warning.svg/2048px-Antu_dialog-warning.svg.png" class="rounded me-2" alt="...">
+          {% else %}
+            <img src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png" class="rounded me-2" alt="...">
+          {% endif %}
+        <strong class="me-auto">{{ notification.title }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+          {{ notification.body }}
+      </div>
+    </div>
+  {% endfor %}
+
+  {% for gift in user.gifts.all %}
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
       <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
           <strong class="me-auto">{{ gift.from_usr.username }} Gave You a Gift!</strong>
@@ -58,6 +77,7 @@
       </div>
     </div>
   {% endfor %}
+  </div>
 {% endblock content %}
 {% block js %}
 <script type="text/javascript">
