@@ -28,11 +28,11 @@
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
           {% if notification.severity == "INF" %}
-            <img src="https://image.pngaaa.com/369/4877369-middle.png" class="rounded me-2" alt="...">
+            <img src="https://image.pngaaa.com/369/4877369-middle.png" class="rounded me-2" width="20" height="20" alt="...">
           {% elif notification.severity == "WRN" %}
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Antu_dialog-warning.svg/2048px-Antu_dialog-warning.svg.png" class="rounded me-2" alt="...">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Antu_dialog-warning.svg/2048px-Antu_dialog-warning.svg.png" width="20" height="20" class="rounded me-2" alt="...">
           {% else %}
-            <img src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png" class="rounded me-2" alt="...">
+            <img src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png" width="20" height="20" class="rounded me-2" alt="...">
           {% endif %}
         <strong class="me-auto">{{ notification.title }}</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
