@@ -24,7 +24,7 @@
     <a type="button" class="btn btn-primary" href="{% url 'givegift' %}">Give A Gift!</a>
   </div>
   <div aria-live="polite" aria-atomic="true" class="position-relative">
-  {% for notification in user.notifications %}
+  {% for notification in user.notifications.all %}
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
           {% if notification.severity == "INF" %}
